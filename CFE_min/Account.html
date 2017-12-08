@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="de"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>100049016041212390100001 - Kunden - IDM-Adapter</title>
+    <link rel="stylesheet" type="text/css" href="idm/default.css">          
+    <link rel="stylesheet" type="text/css" href="idm/bootstrap-select.css">
+	  <link href="idm/bootstrap.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="idm/a11ytheme.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="/idma-callcenter/webjars/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="/idma-callcenter/webjars/respond/1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    
+    <link rel="stylesheet" type="text/css" href="idm/select2.css">
+
+    <script type="text/javascript" src="idm/jquery.js"/>
+    <script type="text/javascript" src="idm/bootstrap.js"/>
+    <script type="text/javascript" src="idm/bootstrap-select.js"/>
+    <script type="text/javascript" src="idm/application.js"/>
+    <script type="text/javascript" src="idm/stockeditor.js"/>
+    <script type="text/javascript" src="idm/select2.js"/>
+    
+    <script type="text/javascript">
+      $(function() {
+        $('.selectpicker').selectpicker({
+        	tickIcon:'glyphicon-ok'
+        });
+      });
+    </script>
+  </head>
+  
+  <body>
+  
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+      <a class="sr-only sr-only-focusable" href="#content">Zu Inhalt springen</a>
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" title="IDM-Adapter Frontend">IDM-Adapter</a>
+        </div>
+        <ul class="nav navbar-nav" aria-labelledby="navigation-main">
+          <li class="active">
+            <a href="http://10.171.116.61:8085/idma-callcenter/accounts" title="Nach Kunden suchen">Kunden</a></li>
+          <li>
+            <a href="http://10.171.116.61:8085/idma-callcenter/orders" title="Nach Aufträgen suchen">Aufträge</a></li>
+          <li>
+            <a href="http://10.171.116.61:8085/idma-callcenter/errors" title="Nach Fehlern suchen">Fehler</a></li>
+          <li>
+            <a href="http://10.171.116.61:8085/idma-callcenter/catalog" title="Produktkatalog anzeigen">Produktkatalog</a></li>
+       	  
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="http://10.171.116.61:8085/idma-callcenter/logout" title="Sitzung beenden">Abmelden</a>
+          </li> 
+        </ul>
+      </div>
+    </nav>
+    
+    <div class="container-fluid">
+    
+    	
+
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="sr-only" id="accounts">Kunden</h1>
+        </div>
+      </div>
+      
+      <!-- Suchfeld -->
+      <div class="row">
+        <div class="col-md-8">
+          <form id="content" method="get" action="/idma-callcenter/accounts" role="search">
+      <div class="form-group">
+        <label for="search">GUID, TO-Nummer oder Kundennummer</label>      
+        <div class="input-group">
+          <input id="search" required="required" placeholder="GUID, TO-Nummer oder Kundennummer eingeben" class="form-control" maxlength="100" name="query" value="604121239010" autofocus="autofocus">
+          <div class="btn-group bootstrap-select input-group-btn" style="width: 142px;"><button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" data-id="type" title="TO-Nummer"><span class="filter-option pull-left">TO-Nummer</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open" role="combobox" style="min-width: 0px;"><ul class="dropdown-menu inner" role="listbox" aria-expanded="false"><li data-original-index="1"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">GUID</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="2" class="selected"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">TO-Nummer</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="3"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Kundennummer</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li></ul></div><select title="Typ" class="selectpicker" data-width="auto" id="type" name="type" tabindex="-98"><option class="bs-title-option" value="">Typ</option>
+            <option value="GUID">GUID</option>
+            <option selected="selected" value="TONR">TO-Nummer</option>
+            <option value="KDNR">Kundennummer</option>
+          </select></div>
+          <div class="input-group-btn">
+            <button type="submit" class="btn btn-primary">Suchen</button>
+          </div>
+        </div>
+      </div>
+    </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-9">
+          <h2>Kundendaten</h2>
+        </div>
+        <div class="col-md-3">
+      <form action="/idma-callcenter/accounts" method="get">
+        <input name="query" value="604121239010" type="hidden">
+        <input name="type" value="TONR" type="hidden">
+        <div class="form-group">
+          <label for="account-select">Konto auswählen</label>
+          <div class="btn-group bootstrap-select form-control pull-right" style="width: 100%;"><button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" data-id="account-select" title="100049016041212390100001"><span class="filter-option pull-left">100049016041212390100001</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open" role="combobox"><div class="bs-searchbox"><input class="form-control" autocomplete="off" role="textbox" aria-label="Search" type="text"></div><ul class="dropdown-menu inner" role="listbox" aria-expanded="false"><li data-original-index="0" class="selected"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">100049016041212390100001</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li></ul></div><select id="account-select" name="account" class="form-control selectpicker pull-right" data-live-search="true" data-size="20" data-width="100%" tabindex="-98">
+            <option selected="selected" value="100049016041212390100001">100049016041212390100001</option>
+          </select></div>
+        </div>
+        <button type="submit" class="btn btn-default sr-only" style="display: none;" aria-hidden="true">Anzeigen</button>
+      </form>
+      <script type="text/javascript">
+        $(function() {
+           $("#account-select").on("change", function() {
+             $(this).parents("form").submit();
+           });
+        });
+      </script>
+    </div>
+      </div>
+      <div class="row">
+      <!-- GUID, TO-Nr, KdNr, Status -->
+        <div class="col-md-5">
+          <dl class="dl-horizontal dl-horizontal-left">
+            <dt id="guid">GUID</dt>
+            <dd role="defintion" aria-labelledby="guid">100049016041212390100001</dd>
+            <dt id="tonr">TO-Nummer</dt>
+            <dd role="definition" aria-labelledby="tonr">604121239010</dd>
+            <dt id="kdnr">Kundennummer</dt>
+            <dd role="definition" aria-labelledby="kdnr">6041212390</dd>
+            <dd role="definition" aria-labelledby="kdnr">
+              <small>Neu: --</small>
+            </dd>
+            <dd role="definition" aria-labelledby="kdnr">
+              <small>Alt: --</small>
+            </dd>
+            <dt id="status">Status</dt>
+            <dd role="definition" aria-labelledby="status">aktiviert</dd>
+          </dl>
+        </div>
+
+        <!-- systel, erzeugt, aktualisiert -->
+        <div class="col-md-5">
+          <dl class="dl-horizontal dl-horizontal-left">
+            <dt id="systel">Systel</dt>
+            <dd role="defintion" aria-labelledby="systel">70026408</dd>
+            <dt id="created">Erzeugt</dt>
+            <dd role="definition" aria-labelledby="created">
+              <span>4. Dezember 2017 14:00:45 MEZ</span>
+            </dd>
+            <dt id="modified">Aktualisiert</dt>
+            <dd role="definition" aria-labelledby="modified">
+                <span>4. Dezember 2017 14:00:45 MEZ</span>
+              </dd>
+          </dl>
+        </div>
+
+        <!-- letzte provisionierung -->
+        
+    </div>
+      
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+		<div class="panel-heading">
+			<h2 class="panel-title">
+				<a class="accordion-toggle" data-toggle="collapse" href="#order-data" aria-expanded="true">Aufträge</a>
+			</h2>
+		</div>
+		<div class="collapse in" id="order-data" aria-expanded="true" style="">
+			<table class="table table-striped" summary="Aufträge zu Konto 100049012863035330020001" title="Aufträge zu Konto 100049012863035330020001" style="margin-bottom: 0">
+
+				<thead>
+					<tr>
+						<th id="order-id-th">IDM-Adapter intern</th>
+						<th id="order-eoid-th">IDM-Adapter extern</th>
+						<th id="order-smf-th">SMK-FF</th>
+						<th id="order-crm-th">CRM-T</th>
+						<th id="order-bssoe-th">BSSOE</th>
+						<th id="order-dkk-th">DKK</th>
+						<th id="order-snr-th">Sofortnutzungsreferenz</th>
+						<th id="order-misc-th">Sonstiges</th>
+					</tr>
+				</thead>
+				
+				<tbody>
+
+					<tr>
+						<td headers="order-id-th"><a href="AuftragInt.html" title="Auftrag IDM000000639609 anzeigen">IDM000000639609</a></td>
+                <td headers="order-eoid-th">
+                  <a href="AuftragExt.html">XDM000000130178</a>
+                </td>
+                <td headers="order-smf-th">604121239-0000-0000-a0000-0000101</td>
+                <td headers="order-crm-th">60412123900</td>
+                <td headers="order-bssoe-th">604121239011</td>
+                <td headers="order-dkk-th"></td>
+                <td headers="order-snr-th"></td>
+                <td headers="order-misca-th"></td>
+					</tr>
+
+					<tr>
+						<td headers="order-id-th"><a href="http://10.171.116.61:8085/idma-callcenter/orders/IDM000000639608" title="Auftrag IDM000000639608 anzeigen">IDM000000639608</a></td>
+                <td headers="order-eoid-th">
+                  <a href="http://10.171.116.61:8085/idma-callcenter/orders?query=XDM000000130178&amp;type=EXT">XDM000000130178</a>
+                </td>
+                <td headers="order-smf-th">604121239-0000-0000-a0000-0000101</td>
+                <td headers="order-crm-th">60412123900</td>
+                <td headers="order-bssoe-th">604121239011</td>
+                <td headers="order-dkk-th"></td>
+                <td headers="order-snr-th"></td>
+                <td headers="order-misca-th"></td>
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-12">
+          <h3 id="inventory">Aktiver Bestand</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+      <ul class="nav nav-tabs" role="tablist" id="account-tabs">
+        <li class="active"><a href="#ems" role="tab" data-toggle="tab" aria-expanded="true">Einzelmodule</a></li>
+        <li class=""><a href="#parameters" role="tab" data-toggle="tab" aria-expanded="false">Parameter</a></li>
+        <li class=""><a href="#callnums" role="tab" data-toggle="tab" aria-expanded="false">Rufnummern</a></li>
+        <li class=""><a href="#suspensions" role="tab" data-toggle="tab" aria-expanded="false">Sperren</a></li>
+      </ul>
+      <div class="tab-content">
+        <!--  Einzelmodule -->
+        <div class="tab-pane active" id="ems">
+      <h4 class="sr-only" id="ems-header">Einzelmodule</h4>
+    
+      <table class="table table-striped" aria-labelledby="ems-header">
+        <caption class="sr-only">??order.changes.modules.caption_de??</caption>
+        <thead>
+          <tr>
+            <th id="em-matno-th">Einzelmodul</th>
+            <th id="em-inid-typ-th">INID-Typ</th>
+            <th id="em-ik-th">Instanzkenner</th>
+            <th id="em-inid-th">INID</th>
+            <th id="em-owner-th">Eigentümer</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <tr>
+            <td headers="em-matno-th"><a href="Produkt.html">EM_2./3.MSN_BEI_IP-AS_ISI (88216906)</a></td>
+            <td headers="em-inid-typ-th">voip</td>
+            <td headers="em-ik-th"></td>
+			<td headers="em-inid-th">130149019900010000639582</td>
+			
+			
+			<td headers="em-owner-th"></td>
+          </tr>
+          <tr>
+            <td headers="em-matno-th"><a href="http://10.171.116.61:8085/idma-callcenter/catalog/88218905">EM_VOIP_CALL_COMFORT_IP_5 (88218905)</a></td>
+            <td headers="em-inid-typ-th">voip</td>
+            <td headers="em-ik-th"></td>
+			<td headers="em-inid-th">130149019900010000639582</td>
+			
+			<td headers="em-owner-th">INID</td>
+			
+          </tr>
+          <tr>
+            <td headers="em-matno-th"><a href="http://10.171.116.61:8085/idma-callcenter/catalog/88216862">EM_ISPX_C&amp;S COMFORT IP (5) (88216862)</a></td>
+            <td headers="em-inid-typ-th"></td>
+            <td headers="em-ik-th"></td>
+			<td headers="em-inid-th"></td>
+			<td headers="em-owner-th">Account</td>
+			
+			
+          </tr>
+          <tr>
+            <td headers="em-matno-th"><a href="http://10.171.116.61:8085/idma-callcenter/catalog/88218782">EM_ERSTE_MSN_BEI_IP-AS_AN_ISI (88218782)</a></td>
+            <td headers="em-inid-typ-th">voip</td>
+            <td headers="em-ik-th"></td>
+			<td headers="em-inid-th">130149019900010000639582</td>
+			
+			
+			<td headers="em-owner-th"></td>
+          </tr>
+          <tr>
+            <td headers="em-matno-th"><a href="http://10.171.116.61:8085/idma-callcenter/catalog/88218643">EM_ZUSATZDIENSTE_ISI (88218643)</a></td>
+            <td headers="em-inid-typ-th"></td>
+            <td headers="em-ik-th"></td>
+			<td headers="em-inid-th"></td>
+			
+			
+			<td headers="em-owner-th"></td>
+          </tr>
+          <tr>
+            <td headers="em-matno-th"><a href="http://10.171.116.61:8085/idma-callcenter/catalog/88219286">EM_VOIP_APPLIKATION_ISI (88219286)</a></td>
+            <td headers="em-inid-typ-th">voip</td>
+            <td headers="em-ik-th"></td>
+			<td headers="em-inid-th">130149019900010000639582</td>
+			
+			
+			<td headers="em-owner-th"></td>
+          </tr>
+          <tr>
+            <td headers="em-matno-th"><a href="http://10.171.116.61:8085/idma-callcenter/catalog/88217465">EM_IP_KENNER_ISI (88217465)</a></td>
+            <td headers="em-inid-typ-th"></td>
+            <td headers="em-ik-th"></td>
+			<td headers="em-inid-th"></td>
+			
+			
+			<td headers="em-owner-th"></td>
+          </tr>
+          <tr>
+            <td headers="em-matno-th"><a href="http://10.171.116.61:8085/idma-callcenter/catalog/88217538">EM_MASTERNUTZER (88217538)</a></td>
+            <td headers="em-inid-typ-th"></td>
+            <td headers="em-ik-th"></td>
+			<td headers="em-inid-th"></td>
+			
+			
+			<td headers="em-owner-th"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+        <div class="tab-pane" id="parameters">
+      <h4 class="sr-only" id="parameters-header">Parameter</h4>
+      
+      <table class="table table-striped" aria-labelledby="parameters-header">
+        <caption class="sr-only">??order.changes.parameter.caption_de??</caption>
+        <thead>
+          <tr>	
+            <th id="param-param-id-th">Parameter</th>
+            <th id="param-param-value-th">Wert</th>
+            <th id="param-inid-typ-th">INID-Typ</th>
+            <th id="param-ik-th">Instanzkenner</th>
+            <th id="param-inid-th">INID</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <tr>
+            <td headers="param-param-id-th">Subscriber-Id (25)</td>
+            <td headers="param-param-value-th">keyA-Subscriber</td>
+            <td headers="param-inid-typ-th">voip</td>
+            <td headers="param-ik-th"></td>
+            <td headers="param-inid-th">130149019900010000639582</td>
+            
+         </tr>
+          <tr>
+            <td headers="param-param-id-th">Subscription-Id (26)</td>
+            <td headers="param-param-value-th">539622000000000</td>
+            <td headers="param-inid-typ-th">voip</td>
+            <td headers="param-ik-th"></td>
+            <td headers="param-inid-th">130149019900010000639582</td>
+            
+         </tr>
+          <tr>
+            <td headers="param-param-id-th">Beschreibt das Authentifizierungsverfahren über die AAA Control Plattform (105)</td>
+            <td headers="param-param-value-th">1</td>
+            <td headers="param-inid-typ-th"></td>
+            <td headers="param-ik-th"></td>
+            <td headers="param-inid-th"></td>
+            
+         </tr>
+          <tr>
+            <td headers="param-param-id-th">Identifiziert den logischen Anschluss und damit den RFS Access Line (102)</td>
+            <td headers="param-param-value-th">DEU.DTAG.216041212390</td>
+            <td headers="param-inid-typ-th"></td>
+            <td headers="param-ik-th"></td>
+            <td headers="param-inid-th"></td>
+            
+         </tr>
+          <tr>
+            <td headers="param-param-id-th">Plattformkenner (24)</td>
+            <td headers="param-param-value-th">1</td>
+            <td headers="param-inid-typ-th">voip</td>
+            <td headers="param-ik-th"></td>
+            <td headers="param-inid-th">130149019900010000639582</td>
+            
+         </tr>
+        </tbody>
+      </table>
+    </div>
+        <div class="tab-pane" id="callnums">
+          <h4 class="sr-only" id="callnums-header">Rufnummern</h4>
+
+          <table class="table table-striped" aria-labelledby="callnums-header">
+            <caption class="sr-only">Rufnummernbestand</caption>
+            <thead>
+              <tr>
+                <th id="callnum-onkz-id-th">Ortsnetzkennzahl</th>
+                <th id="callnum-callnum-th">Rufnummer</th>
+                <th id="callnum-thn-th">Technische Hauptnummer</th>
+              </tr>
+            </thead>
+            
+            <tbody>
+              <tr>
+                <td headers="callnum-onkz-id-th">600</td>
+                <td headers="callnum-callnum-th">105830349</td>
+                
+                <td headers="callnum-thn-th">Nein</td>
+                <td headers="callnum-thn-th"></td>
+              </tr>
+              <tr>
+                <td headers="callnum-onkz-id-th">600</td>
+                <td headers="callnum-callnum-th">105830350</td>
+                
+                <td headers="callnum-thn-th">Nein</td>
+                <td headers="callnum-thn-th"></td>
+              </tr>
+              <tr>
+                <td headers="callnum-onkz-id-th">600</td>
+                <td headers="callnum-callnum-th">105830348</td>
+                <td headers="callnum-thn-th">Ja</td>
+                
+                
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-pane" id="suspensions">
+      <h4 class="sr-only" id="susp">Sperren</h4>
+
+      <table class="table table-striped" aria-labelledby="susp">
+        <caption class="sr-only">??order.changes.suspensions.caption_de??</caption>
+        <thead>
+          <tr>
+            <th id="susp-susp-group-th">Sperr-Gruppe</th>
+            <th id="susp-ik-th">Instanzkenner</th>
+            <th id="susp-inid-th">INID</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          
+        </tbody>
+      </table>
+    </div>
+      </div>
+    </div>
+      </div> 
+    </div>
+  
+<div id="jsseunrwnoeo" style="display: none;"><div id="ocfipreoqlao" style="display: none;" class="simple_mutex" origin="smarttube">mutex/ocfipreoqlao/mutex</div></div></body></html>

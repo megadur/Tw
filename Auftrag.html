@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="de"  xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <title>IDM000000639609 - Aufträge - IDM-Adapter</title>
+  <link rel="stylesheet" type="text/css" href="idm/default.css"/>
+  <link rel="stylesheet" type="text/css" href="idm/bootstrap-select.css"/>
+  <link rel="stylesheet" type="text/css" href="idm/bootstrap.css"/>
+  <link rel="stylesheet" type="text/css" href="idm/a11ytheme.css"/>
+  <link rel="stylesheet" type="text/css" href="idm/select2.css"/>
+  <link rel="stylesheet" type="text/css" href="idm/tw.css"/>
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="/idma-callcenter/webjars/html5shiv/3.7.2/html5shiv.min.js">
+</script>
+      <script src="/idma-callcenter/webjars/respond/1.4.2/dest/respond.min.js">
+</script>
+    <![endif]-->
+
+  <script type="text/javascript" src="idm/jquery.js" />
+  <script type="text/javascript" src="idm/bootstrap.js" />
+  <script type="text/javascript" src="idm/bootstrap-select.js" />
+  <script type="text/javascript" src="idm/application.js" />
+  <script type="text/javascript" src="idm/stockeditor.js" />
+  <script type="text/javascript" src="idm/select2.js" />
+
+  <script type="text/javascript">
+    $(function () {
+      $('.selectpicker').selectpicker({
+        tickIcon: 'glyphicon-ok'
+      });
+    });
+
+  </script>
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <a class="sr-only sr-only-focusable" href="#content">Zu Inhalt springen</a>
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" title="IDM-Adapter Frontend">IDM-Adapter</a>
+      </div>
+      <ul class="nav navbar-nav" aria-labelledby="navigation-main">
+        <li>
+          <a href="Account.html" title="Nach Kunden suchen">Kunden</a>
+        </li>
+        <li class="active">
+          <a href="Auftrag.html" title="Nach Aufträgen suchen">Aufträge</a>
+        </li>
+        <li>
+          <a href="Fehler.html" title="Nach Fehlern suchen">Fehler</a>
+        </li>
+        <li>
+          <a href="Katalog.html" title="Produktkatalog anzeigen">Produktkatalog</a>
+        </li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="Anmelden.html" title="Sitzung beenden">Abmelden</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container-fluid" role="main" aria-labelledby="order" id="content">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 id="order" class="sr-only">IDM000000639609</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <form method="get" action="/idma-callcenter/orders" role="search">
+          <div class="form-group">
+            <label for="search">IDM-Adapter intern</label>
+            <div class="input-group">
+              <input class="form-control" required="required" name="query" id="search" placeholder="Auftragsnummer eingeben" value="IDM000000639609"
+                maxlength="100" autofocus="autofocus" type="text"/>
+              <label for="system" class="sr-only">order.search.system</label>
+              <div class="btn-group bootstrap-select input-group-btn" style="width: 164px;">
+                <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" data-id="system" title="IDM-Adapter intern">
+                       <span class="filter-option pull-left">IDM-Adapter intern</span>&nbsp;<span class="bs-caret"><span class="caret">
+                       </span>
+                       </span>
+                       </button>
+                <div class="dropdown-menu open" role="combobox" style="min-width: 0px;">
+                  <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
+                    <li data-original-index="0" class="selected">
+                      <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true">
+                       <span class="text">IDM-Adapter intern</span>
+                       <span class="glyphicon glyphicon-ok check-mark">
+                       </span>
+                       </a>
+                    </li>
+                    <li data-original-index="1">
+                      <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                       <span class="text">IDM-Adapter extern</span>
+                       <span class="glyphicon glyphicon-ok check-mark">
+                       </span>
+                       </a>
+                    </li>
+                    <li data-original-index="2">
+                      <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                       <span class="text">SMK-FF</span>
+                       <span class="glyphicon glyphicon-ok check-mark">
+                       </span>
+                       </a>
+                    </li>
+                    <li data-original-index="3">
+                      <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                       <span class="text">CRM-T</span>
+                       <span class="glyphicon glyphicon-ok check-mark">
+                       </span>
+                       </a>
+                    </li>
+                    <li data-original-index="4">
+                      <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                       <span class="text">BSSOE</span>
+                       <span class="glyphicon glyphicon-ok check-mark">
+                       </span>
+                       </a>
+                    </li>
+                    <li data-original-index="5">
+                      <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                       <span class="text">DKK</span>
+                       <span class="glyphicon glyphicon-ok check-mark">
+                       </span>
+                       </a>
+                    </li>
+                    <li data-original-index="6">
+                      <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                       <span class="text">Sofortnutzungsref.</span>
+                       <span class="glyphicon glyphicon-ok check-mark">
+                       </span>
+                       </a>
+                    </li>
+                    <li data-original-index="7">
+                      <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                       <span class="text">Sonstiges</span>
+                       <span class="glyphicon glyphicon-ok check-mark">
+                       </span>
+                       </a>
+                    </li>
+                  </ul>
+                </div>
+                <select class="selectpicker" data-width="auto" id="system" name="type" tabindex="-98">
+            <option selected="selected" value="IDMA">IDM-Adapter intern</option>
+            <option value="EXT">IDM-Adapter extern</option>
+            <option value="SMF">SMK-FF</option>
+            <option value="CRM">CRM-T</option>
+            <option value="BSSOE">BSSOE</option>
+            <option value="DKK">DKK</option>
+            <option value="SNR">Sofortnutzungsref.</option>
+            <option value="MISC">Sonstiges</option>
+          </select>
+              </div>
+              <span class="input-group-btn">
+              <button type="submit" class="btn btn-primary">Suchen</button>
+          </span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div id="global-zeroclipboard-html-bridge" class="global-zeroclipboard-container" style="position: absolute; left: 0px; top: -9999px; width: 1px; height: 1px; z-index: 999999999;">
+    <object id="global-zeroclipboard-flash-bridge" name="global-zeroclipboard-flash-bridge" type="application/x-shockwave-flash"
+      data="idm/ZeroClipboard.swf" width="100%" height="100%">
+<param name="allowScriptAccess" value="sameDomain">
+<param name="allowNetworking" value="all">
+<param name="menu" value="false">
+<param name="wmode" value="transparent">
+<param name="flashvars" value="trustedOrigins=10.171.116.61%3A8085%2C%2F%2F10.171.116.61%3A8085%2Chttp%3A%2F%2F10.171.116.61%3A8085&amp;swfObjectId=global-zeroclipboard-flash-bridge">
+</object>
+  </div>
+
+  <div id="jsseunrwnoeo" style="display: none;">
+    <div id="ocfipreoqlao" style="display: none;" class="simple_mutex" origin="smarttube">mutex/ocfipreoqlao/mutex</div>
+  </div>
+</body>
+
+</html>

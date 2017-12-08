@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fehler - IDM-Adapter</title>
+  <link rel="stylesheet" type="text/css" href="idm/default.css">
+  <link rel="stylesheet" type="text/css" href="idm/bootstrap-select.css">
+  <link rel="stylesheet" type="text/css" href="idm/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="idm/a11ytheme.css">
+  <link rel="stylesheet" type="text/css" href="idm/select2.css">
+  <link rel="stylesheet" type="text/css" href="idm/tw.css">
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="/idma-callcenter/webjars/html5shiv/3.7.2/html5shiv.min.js">
+</script>
+      <script src="/idma-callcenter/webjars/respond/1.4.2/dest/respond.min.js">
+</script>
+    <![endif]-->
+  <script type="text/javascript" src="idm/jquery.js" />
+  <script type="text/javascript" src="idm/bootstrap.js" />
+  <script type="text/javascript" src="idm/bootstrap-select.js" />
+  <script type="text/javascript" src="idm/application.js" />
+  <script type="text/javascript" src="idm/stockeditor.js" />
+  <script type="text/javascript" src="idm/select2.js" />
+  <script type="text/javascript">
+    $(function () {
+      $('.selectpicker').selectpicker({
+        tickIcon: 'glyphicon-ok'
+      });
+    });
+
+  </script>
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-static-top" role="navigation"> <a class="sr-only sr-only-focusable" href="#content">Zu Inhalt springen</a>
+    <div class="container-fluid">
+      <div class="navbar-header"> <a class="navbar-brand" title="IDM-Adapter Frontend">IDM-Adapter</a> </div>
+      <ul class="nav navbar-nav" aria-labelledby="navigation-main">
+        <li> <a href="Account.html" title="Nach Kunden suchen">Kunden</a> </li>
+        <li> <a href="Auftrag.html" title="Nach Aufträgen suchen">Aufträge</a> /li>
+          <li class="active"> <a href="Fehler.html" title="Nach Fehlern suchen">Fehler</a> </li>
+          <li> <a href="Katalog.html" title="Produktkatalog anzeigen">Produktkatalog</a> </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li> <a href="Anmelden.html" title="Sitzung beenden">Abmelden</a> </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container-fluid" role="main" aria-labelledby="errors">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="sr-only" id="errors">Fehler</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="sr-only">Filter</h2>
+        <form id="content" action="/idma-callcenter/errors" method="get" role="search">
+          <div class="row">
+            <div class="form-group col-md-3"> <label for="order" class="control-label">Auftrag (XDM)</label> <input name="eoId" id="order" class="form-control" required="required" maxlength="100" placeholder="Auftragsnummer eingeben" autofocus="autofocus" type="text"> </div>
+            <div class="form-group col-md-3"> <label for="state" class="control-label">Status</label> <select id="state" name="filter" class="form-control">
+                  <option value="ALL" selected="selected">Alle</option>
+                  <option value="OPEN">Offen</option>
+                  <option value="CLOSED">Abgeschlossen</option>
+                </select> </div>
+            <div class="form-group col-md-3"> <label for="code-int" class="control-label">Fehlercode</label> <input name="errorCode" id="code-int" class="form-control" maxlength="10" type="text"> </div>
+            <div class="form-group col-md-3"> <label for="system" class="control-label">System</label> <select id="system" name="system" class="form-control" placeholder="??errors.search.system.placeholder_de??">
+                  <option value="" selected="selected">Alle</option>
+                  <option value="IDMA">IDM-Adapter</option>
+                  <option value="PSNT">PSNT</option>
+                  <option value="ZPI">ZPI</option>
+                </select> </div>
+          </div>
+          <div class="row">
+            <div class="col-md-2"> <button type="submit" class="btn btn-primary">Filtern</button> </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div id="jsseunrwnoeo" style="display: none;">
+    <div id="ocfipreoqlao" style="display: none;" class="simple_mutex" origin="smarttube">mutex/ocfipreoqlao/mutex</div>
+  </div>
+</body>
+
+</html>
